@@ -1,0 +1,43 @@
+.avatar-upload {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.avatar-preview {
+    margin-right: 20px;
+}
+
+.avatar-edit {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-help-text {
+    color: #666;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.checkbox-group {
+    margin-bottom: 10px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.tfa-status {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.status-badge {
+    margin-bottom: 10px;
+}
+
+.status-badge .badge {
+    font-size: 14px;
+    padding: 5px 10px;
+}

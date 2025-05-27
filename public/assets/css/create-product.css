@@ -1,0 +1,137 @@
+.error-text {
+    color: #f44336;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+}
+
+.form-control.error {
+    border-color: #f44336;
+}
+
+.form-section {
+    margin-bottom: 30px;
+}
+
+.form-section h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.image-upload {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 200px;
+    background-color: #f8f9fa;
+    border: 2px dashed #dfe3e8;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.image-upload:hover {
+    background-color: #eaedef;
+}
+
+.image-upload input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.image-upload .upload-icon {
+    font-size: 40px;
+    color: #aaa;
+}
+
+.image-upload .upload-text {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.image-preview {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: none;
+}
+
+.spec-row {
+    display: flex;
+    margin-bottom: 15px;
+    gap: 15px;
+}
+
+.spec-row .form-group {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.spec-row .remove-spec {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    color: #f44336;
+    background-color: rgba(244, 67, 54, 0.1);
+    border: 1px solid rgba(244, 67, 54, 0.2);
+    border-radius: 8px;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-bottom: 5px;
+}
+
+.add-spec-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    color: #555;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.add-spec-btn i {
+    margin-right: 5px;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.form-buttons .btn-secondary {
+    margin-right: 10px;
+}
+
+/* Success message */
+.success-message {
+    display: none;
+    padding: 20px;
+    background-color: rgba(76, 175, 80, 0.1);
+    border: 1px solid rgba(76, 175, 80, 0.2);
+    color: #4caf50;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.success-message i {
+    margin-right: 10px;
+}

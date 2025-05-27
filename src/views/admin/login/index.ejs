@@ -1,0 +1,36 @@
+<style>
+    .error-text {
+        color: #f44336;
+        font-size: 12px;
+        margin-top: 5px;
+        display: none;
+    }
+
+    .form-control.error {
+        border-color: #f44336;
+    }
+</style>
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Initialize form validation
+        if (typeof initFormValidation === "function") {
+            initFormValidation("loginForm");
+        }
+
+        // Handle form submission
+        document
+            .getElementById("loginForm")
+            .addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                if (validateForm("loginForm")) {
+                    // In a real app, you would send an AJAX request to your server
+                    // For demo: redirect to dashboard
+                    window.location.href = "index.html";
+                }
+            });
+    });
+</script>

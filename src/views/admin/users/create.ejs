@@ -22,15 +22,18 @@
             <div class="form-group">
                 <label for="firstName">Full Name*</label>
                 <input
-                    value="Nguyen Van A"
                     type="text"
                     id="firstName"
                     name="name"
                     class="form-control"
-                    required
                     data-validate="name"
+                    value="<%= old?.name %>"
                 />
-                <span class="error-text" id="userNameError"></span>
+                <% if(errors?.name) { %>
+                <span class="error-text" id="userNameError"
+                    ><%= errors.name %></span
+                >
+                <% } %>
             </div>
 
             <div class="form-row">
@@ -41,10 +44,13 @@
                         id="userEmail"
                         name="email"
                         class="form-control"
-                        required
-                        value="abc@gmail.com"
+                        value="<%= old?.email %>"
                     />
-                    <span class="error-text" id="userEmailError"></span>
+                    <% if(errors?.email) { %>
+                    <span class="error-text" id="userEmailError"
+                        ><%= errors.email %></span
+                    >
+                    <% } %>
                 </div>
 
                 <div class="form-group">
@@ -83,7 +89,6 @@
                     id="userUsername"
                     name="username"
                     class="form-control"
-                    required
                     data-validate="username"
                 />
                 <span class="error-text" id="userUsernameError"></span>
@@ -92,12 +97,7 @@
             <div class="form-row">
                 <div class="form-group">
                     <label for="userRole">Role*</label>
-                    <select
-                        id="userRole"
-                        name="role"
-                        class="form-control"
-                        required
-                    >
+                    <select id="userRole" name="role" class="form-control">
                         <option value="">Select Role</option>
                         <option value="admin">Administrator</option>
                         <option value="editor">Editor</option>
@@ -108,12 +108,7 @@
 
                 <div class="form-group">
                     <label for="userStatus">Status*</label>
-                    <select
-                        id="userStatus"
-                        name="status"
-                        class="form-control"
-                        required
-                    >
+                    <select id="userStatus" name="status" class="form-control">
                         <option value="">Select Status</option>
                         <option value="active" selected>Active</option>
                         <option value="inactive">Inactive</option>
@@ -135,7 +130,6 @@
                         id="userPassword"
                         name="password"
                         class="form-control"
-                        required
                         data-validate="password"
                     />
                     <span class="error-text" id="userPasswordError"></span>
@@ -149,7 +143,6 @@
                         id="userConfirmPassword"
                         name="confirm_password"
                         class="form-control"
-                        required
                     />
                     <span
                         class="error-text"

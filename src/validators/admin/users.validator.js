@@ -1,5 +1,5 @@
-const { checkSchema } = require("express-validator");
-const handleValidationErrors = require("../handleValidationErrors");
+const { checkSchema, validationResult } = require("express-validator");
+const handleValidationErrors = require("./handleValidationErrors");
 
 exports.createUser = [
     (req, res, next) => {
@@ -9,19 +9,15 @@ exports.createUser = [
     checkSchema({
         name: {
             notEmpty: true,
-            errorMessage: "Name is not empty.",
+            errorMessage: "name is not empty",
         },
         email: {
             notEmpty: {
-                errorMessage: "Description is not empty.",
+                errorMessage: "email is not empty",
             },
             isEmail: {
-                errorMessage: "Must be an email.",
+                errorMessage: "Must be an email",
             },
-        },
-        phone: {
-            notEmpty: true,
-            errorMessage: "Phone is not empty.",
         },
     }),
     handleValidationErrors,
@@ -32,17 +28,18 @@ exports.updatePost = [
         title: {
             optional: true,
             notEmpty: true,
-            errorMessage: "Title is not empty.",
+            errorMessage: "Title is not empty",
         },
         description: {
             optional: true,
+
             notEmpty: true,
-            errorMessage: "Description is not empty.",
+            errorMessage: "Description is not empty",
         },
         content: {
             optional: true,
             notEmpty: true,
-            errorMessage: "Content is not empty.",
+            errorMessage: "Content is not empty",
         },
     }),
     handleValidationErrors,

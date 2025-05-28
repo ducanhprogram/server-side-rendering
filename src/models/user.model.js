@@ -9,7 +9,7 @@ const { buildInsertQuery, buildUpdateQuery } = require("@/utils/queryBuilder");
 exports.findAll = async (page, limit) => {
     const offset = (page - 1) * limit;
     const [users] = await db.query(
-        `select id,name,first_name,last_name, email, birthday, bio,intro, avatar, gender from users order by created_at desc limit ? offset ?`,
+        `select id,name,first_name,last_name, email, birthday, bio,intro, avatar, gender, updated_at from users order by created_at desc limit ? offset ?`,
         [+limit, +offset]
     );
     return users;
@@ -27,64 +27,6 @@ exports.findById = async (id) => {
     );
     return results[0];
 };
-
-// exports.create = async (data) => {
-//     const allowedFields = [
-//         "first_name",
-//         "last_name",
-//         "email",
-//         "birthday",
-//         "bio",
-//         "intro",
-//         "avatar",
-//         "gender",
-//         "username",
-//         "name",
-//     ];
-//     const createData = Object.keys(data)
-//         .filter((key) => {
-//             return allowedFields.includes(key);
-//         })
-//         .reduce((obj, key) => {
-//             obj[key] = data[key];
-//             return obj;
-//         }, {});
-//     //INSERT INTO users SET first_name = 'Jane', last_name = 'Doe', email = 'jane@example.com', username = 'janedoe', bio = 'Hello, I'm Jane!';  ví dụ
-//     const [result] = await db.query(`insert into users set ?`, [createData]);
-//     // insertId: ID của bản ghi vừa được thêm vào (giá trị của trường AUTO_INCREMENT)
-//     //Nó được trả về bởi thư viện cơ sở dữ liệu (như mysql2) sau khi thực hiện câu lệnh INSERT.
-//     return {
-//         id: result.insertId,
-//         ...createData,
-//     };
-// };
-
-// exports.update = async (id, data) => {
-//     const allowedFields = [
-//         "first_name",
-//         "last_name",
-//         "email",
-//         "dob",
-//         "bio",
-//         "intro",
-//         "avatar",
-//         "gender",
-//         "username",
-//     ];
-//     const updateData = Object.keys(data)
-//         .filter((key) => {
-//             return allowedFields.includes(key);
-//         })
-//         .reduce((obj, key) => {
-//             obj[key] = data[key];
-//             return obj;
-//         }, {});
-//     const [result] = await db.query(`update users set ? where id = ?`, [
-//         updateData,
-//         id,
-//     ]);
-//     return result.affectedRows > 0;
-// };
 
 exports.create = async (data) => {
     const { columns, placeholders, values } = buildInsertQuery(data);

@@ -16,25 +16,34 @@ exports.index = async (req, res) => {
 };
 
 exports.show = async (req, res) => {
+    const user = await userService.getById(+req.params.id);
     res.render("admin/users/show", {
         title: "Users | Admin Dashboard",
+        user,
+    });
+};
+
+exports.edit = async (req, res) => {
+    const user = await userService.getById(+req.params.id);
+    res.render("admin/users/edit", {
+        title: "Users | Admin Dashboard",
+        errors: {},
+        old: {},
+        user,
     });
 };
 
 exports.create = async (req, res) => {
     res.render("admin/users/create", {
         title: "Users | Admin Dashboard",
-    });
-};
-
-exports.edit = async (req, res) => {
-    res.render("admin/users/edit", {
-        title: "Users | Admin Dashboard",
+        errors: {},
+        old: {},
     });
 };
 
 exports.store = async (req, res) => {
     const { confirm_password, ...body } = req.body;
     const user = await userService.create(body);
+
     res.redirect("/admin/users"); // phương thức redirect  => get
 };

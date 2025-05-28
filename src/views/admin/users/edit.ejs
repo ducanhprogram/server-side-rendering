@@ -1,3 +1,20 @@
+<style>
+    /* Additional styling for checkbox groups */
+    .checkbox-group {
+        margin-bottom: 10px;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+        margin-right: 8px;
+    }
+
+    .form-help-text {
+        margin-top: 5px;
+        color: #666;
+        font-size: 13px;
+    }
+</style>
+
 <div class="content-header">
     <h1>Edit User</h1>
     <div>
@@ -141,7 +158,8 @@
             </div>
 
             <div class="form-group">
-                <label for="lastLogin">Last Login</label>
+                <!-- <label for="lastLogin">Last Login</label> -->
+                <label for="lastLogin">Updated at</label>
                 <input
                     type="text"
                     id="lastLogin"
@@ -229,3 +247,5 @@
         </div>
     </div>
 </form>
+
+<script src="/assets/js/edit-user.js"></script>
